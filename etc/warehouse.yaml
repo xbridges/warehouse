@@ -1,0 +1,28 @@
+database:
+  postgresql:
+    host: "172.22.10.110"
+    port: 5432
+    schema: "warehousedb"
+    user: "warehouse"
+    password: "warehouse"
+    ssl: "disable"
+  redis:
+    host: "172.22.10.110"
+    port: 6379
+    schema: 0 # redis db index 0-15
+    user: ""
+    password: ""
+webapi:
+  version: 1
+  port: 8080
+  cookie_key: "secret_cookie_key"
+log:
+  loglevel: "debug"
+  destination: "C:/Users/r-kuroda/Documents/02_repository/codeworkspace/go/warehouse/log/warehouse.log"
+  lifecycle: 7 # unit: day
+authenticator:
+  domain: "localhost"
+  expiration: 1200 # unit seconds.
+  schema: 1 # only authorization db index( do not set system.database.redis.schema value, please select other index 0-15. )
+
+
